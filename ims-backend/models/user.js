@@ -21,7 +21,7 @@ const UserSchema = new mongoose.Schema(
     },
     role: {
       type: String,
-      enum: ["vendor", "user"],
+      enum: ["vendor", "user", "shipper"],
     },
   },
   { timestamps: true }
