@@ -1,14 +1,15 @@
-import User from '../models/user'
-import {emailRegex} from '../utils/regex'
+import User from '../models/user.js'
+import {emailRegex} from '../utils/regex.js'
 
 export const registerUser = async (req, res) => {
+  console.log("hi");
   try {
-    const { userName, email, password, role } = req.body;
+    const { name, email, password, role } = req.body;
     if (!emailRegex.test(email)) {
       return res.status(400).json({ error: "Invalid email address" });
     }
     const newUser = new User({
-      userName,
+      userName: name,
       email,
       password,
       role,
@@ -16,6 +17,7 @@ export const registerUser = async (req, res) => {
     const savedUser = await newUser.save();
     res.status(201).json(savedUser);
   } catch (err) {
+    console.log(err);
     res.status(500).json({ error: err.message });
   }
 };

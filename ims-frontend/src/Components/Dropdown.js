@@ -1,22 +1,27 @@
-import React, { useState } from "react";
+import React from "react";
 
-const options=["User","Vendor"]
-const Dropdown = () => {
-  const [selectedOption, setSelectedOption] = useState(null);
-  const handleSelect = (option) => {
-    setSelectedOption(option);
+const options = [
+  { label: "user", value: "user" },
+  { label: "vendor", value: "vendor" },
+];
+
+const Dropdown = ({ value, onChange, name }) => {
+  const handleChange = (event) => {
+    event.preventDefault();
+    onChange(event);
   };
 
   return (
     <div className="dropdown">
       <select
-        value={selectedOption}
-        onChange={(e) => handleSelect(e.target.value)}
+        value={value}
+        onChange={handleChange}
         className="dropdown-option"
+        name={name}
       >
         {options.map((option, index) => (
-          <option key={index} value={option}>
-            {option}
+          <option key={index} value={option.value}>
+            {option.label}
           </option>
         ))}
       </select>
