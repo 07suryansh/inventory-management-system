@@ -8,6 +8,10 @@ const ProductSchema = new mongoose.Schema(
       max: 50,
       required: true,
     },
+    detail:{
+      type:String,
+      required: true,
+    },
     quantity: {
       type: String,
       required: true,

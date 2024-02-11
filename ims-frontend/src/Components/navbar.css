@@ -1,0 +1,16 @@
+.navbar{
+    background-color: black;
+    padding: 14px 26px;
+    font-size: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    position: fixed;
+}
+.navbar>img{
+    background-color: black;
+    width: 40px;
+    padding: auto;
+}
