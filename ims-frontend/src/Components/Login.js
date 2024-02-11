@@ -20,8 +20,6 @@ export default function Login() {
       console.log();
       localStorage.setItem("token", result);
       navigate("/home");
-    } else {
-      toast.error("Something went wrong");
     }
   };
 

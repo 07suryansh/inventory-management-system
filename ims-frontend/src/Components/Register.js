@@ -22,8 +22,6 @@ export default function Register() {
       console.log();
       toast.success("User registered successfully");
       navigate("/login");
-    } else {
-      toast.error("Something went wrong");
     }
   };
 

@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import api from "./api";
 
 export const handleRegister = async (value) => {
@@ -8,6 +9,7 @@ export const handleRegister = async (value) => {
     }
   } catch (error) {
     console.log(error);
+    toast.error(error.response.data.error);
     return false;
   }
 };
@@ -19,6 +21,7 @@ export const handleLogin = async (value) => {
       }
     } catch (error) {
       console.log(error);
+      toast.error(error.response.data.error);
       return false;
     }
   };

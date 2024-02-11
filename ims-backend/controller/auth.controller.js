@@ -1,5 +1,7 @@
 import User from '../models/user.js'
 import {emailRegex} from '../utils/regex.js'
+import bcrypt from "bcrypt";
+import jwt from 'jsonwebtoken';
 
 export const registerUser = async (req, res) => {
   console.log("hi");
@@ -7,6 +9,10 @@ export const registerUser = async (req, res) => {
     const { name, email, password, role } = req.body;
     if (!emailRegex.test(email)) {
       return res.status(400).json({ error: "Invalid email address" });
+    }
+    const findUser=await User.findOne({email});
+    if(findUser){
+      return res.status(400).json({ error: "User already exists" });
     }
     const newUser = new User({
       userName: name,
@@ -23,6 +29,7 @@ export const registerUser = async (req, res) => {
 };
 
 export const loginUser = async (req, res) => {
+  console.log("hi");
   try {
     const { email, password } = req.body;
     if (!emailRegex.test(email)) {
