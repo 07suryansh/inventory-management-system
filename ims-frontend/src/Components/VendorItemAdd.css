@@ -1,0 +1,37 @@
+.VendorItemAdd-page{
+    padding: 40px;
+    border: 2px solid #cfcfcf;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.VendorItemAdd-page>span{
+    font-size: 30px;
+    margin: 10px;
+}
+.add-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.add-item>input{
+    border: 1px solid #cfcfcf;
+    padding: 6px 8px;
+    width: 100%;
+}
+.add-item>button{
+    border: none;
+    width: 50%;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #836FFF;
+    color: white;
+}
+.add-item>button:hover{
+    background-color: #735efb;
+}

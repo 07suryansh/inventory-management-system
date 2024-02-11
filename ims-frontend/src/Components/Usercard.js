@@ -10,7 +10,8 @@ const userCardStyle ={
     height:'100%',
     padding:'10px',
     borderRadius:'10px',
-    border:'2px solid #D4E7C5',
+    border:'0.5px solid #000000',
+    fontWeight:'400',
 }
 
 export default function Usercard(props) {
